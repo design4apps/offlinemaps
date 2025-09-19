@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offline Maps SDK Comparison for Android</title>
+    <title>Offline Maps SDKs for Android: A 2025 Developer's Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,7 @@
     <style>
         body {
             font-family: 'Nunito Sans', sans-serif;
+            background-color: #F8FAFC;
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Outfit', sans-serif;
@@ -22,229 +23,218 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            height: 300px;
+            height: 320px;
             max-height: 400px;
         }
         @media (min-width: 768px) {
             .chart-container {
-                height: 350px;
+                height: 400px;
             }
+        }
+        .flowchart-node {
+            border: 2px solid #93C5FD;
+            background-color: #EFF6FF;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #60A5FA;
+            margin: 0.5rem 0;
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="text-gray-800">
 
-    <div class="container mx-auto p-4 md:p-8">
-        
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
         <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-[#003B73]">Navigating the Future of Offline Maps</h1>
-            <p class="text-lg text-[#0074B7] mt-2">An Android SDK Comparison for Your Next-Generation App</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#1E3A8A] mb-4">Navigating the Future: Choosing an Offline Maps SDK for Android</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">An infographic for developers migrating from the legacy HERE Maps SDK. We compare leading providers on offline capabilities, pricing, and key features to guide your decision.</p>
         </header>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 class="text-2xl font-bold text-[#003B73] mb-4">The Challenge: Moving Beyond Legacy SDKs</h2>
-            <p class="text-gray-700">
-                With the deprecation of the old HERE Maps SDK, developers are at a crossroads, needing a modern, robust, and cost-effective solution for offline mapping. The landscape has shifted from downloading pre-defined regions (continents, countries) to more flexible methods. This guide analyzes the top contenders—Mapbox, TomTom, and the new HERE Navigation SDK—to help you decide on the best migration path.
-            </p>
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#1E3A8A] mb-8">The Contenders at a Glance</h2>
+            <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#60A5FA] mb-4">🗺️ Mapbox</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Offline Method:</strong> Highly flexible. Download custom geographic areas by specifying bounding box coordinates and zoom levels.</li>
+                        <li><strong>Pricing Model:</strong> Based on Monthly Active Users (MAUs).</li>
+                        <li><strong>Key Strength:</strong> Unmatched map customization and styling with Mapbox Studio. Strong developer community.</li>
+                        <li><strong>Official Site:</strong> <a href="https://www.mapbox.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">mapbox.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#60A5FA] mb-4">🚗 TomTom</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Offline Method:</strong> Supports offline maps, allowing download of selected regions for use without connectivity.</li>
+                        <li><strong>Pricing Model:</strong> Transaction-based (API requests), with a large daily free tier.</li>
+                        <li><strong>Key Strength:</strong> Deep expertise in automotive and routing. Accurate, real-time traffic data.</li>
+                        <li><strong>Official Site:</strong> <a href="https://developer.tomtom.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">developer.tomtom.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#60A5FA] mb-4">🌍 HERE Navigation SDK</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Offline Method:</strong> Download maps by continent, country, or state, similar to the legacy SDK.</li>
+                        <li><strong>Pricing Model:</strong> Enterprise-focused. Custom pricing available on request.</li>
+                        <li><strong>Key Strength:</strong> A feature-rich, all-in-one navigation solution with powerful offline capabilities.</li>
+                        <li><strong>Official Site:</strong> <a href="https://www.here.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">here.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#60A5FA] mb-4">📍 Google Maps Platform</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Offline Method:</strong> User-driven. The SDK can cache map tiles, but offline map packages are downloaded manually by the user in the Google Maps app.</li>
+                        <li><strong>Pricing Model:</strong> Transaction-based (map loads, API calls), with a recurring monthly credit.</li>
+                        <li><strong>Key Strength:</strong> Ubiquitous and familiar to users. Excellent search (Places) and Street View data.</li>
+                        <li><strong>Official Site:</strong> <a href="https://mapsplatform.google.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">mapsplatform.google.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#60A5FA] mb-4">📊 ArcGIS Maps SDK (Esri)</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><strong>Offline Method:</strong> Extremely robust. Create and download "Mobile Map Packages" (.mmpk) containing map data, layers, and locators.</li>
+                        <li><strong>Pricing Model:</strong> Developer subscription and credit-based system for services.</li>
+                        <li><strong>Key Strength:</strong> Unrivaled for professional GIS data integration, spatial analysis, and enterprise-grade mapping.</li>
+                        <li><strong>Official Site:</strong> <a href="https://developers.arcgis.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">developers.arcgis.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-[#60A5FA] mb-4">🌳 osmdroid</h3>
+                    <ul class="space-y-3 text-gray-700">
+                         <li><strong>Offline Method:</strong> Fully manual and flexible. Use map tile archives in various formats (ZIP, MBTiles). Total developer control.</li>
+                        <li><strong>Pricing Model:</strong> Free and Open Source. Data is from OpenStreetMap (OSM).</li>
+                        <li><strong>Key Strength:</strong> No cost, no vendor lock-in, and complete control over the offline data. Active community support.</li>
+                        <li><strong>Official Site:</strong> <a href="https://github.com/osmdroid/osmdroid" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">osmdroid on GitHub</a></li>
+                    </ul>
+                </div>
+
+            </main>
         </section>
-
-        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-[#60A5FA] mb-4">🗺️ Mapbox</h3>
-                <ul class="space-y-3 text-gray-700">
-                    <li><strong>Offline Method:</strong> Highly flexible. Download custom geographic areas by specifying bounding box coordinates and zoom levels.</li>
-                    <li><strong>Pricing Model:</strong> Based on Monthly Active Users (MAUs). A developer-friendly model that scales with your user base.</li>
-                    <li><strong>Free Tier:</strong> Generous free tier for up to 100 MAUs for the Navigation SDK.</li>
-                    <li><strong>Key Strength:</strong> Unmatched map customization and styling with Mapbox Studio. Strong developer community and documentation.</li>
-                    <li><strong>Ideal Use Case:</strong> Apps requiring a unique brand identity, highly custom map styles, and a predictable, user-based pricing model.</li>
-                    <li><strong>Official Site:</strong> <a href="https://www.mapbox.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">mapbox.com</a></li>
-                </ul>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-[#60A5FA] mb-4">🚗 TomTom</h3>
-                <ul class="space-y-3 text-gray-700">
-                    <li><strong>Offline Method:</strong> Supports offline maps, allowing download of selected regions for use without connectivity.</li>
-                    <li><strong>Pricing Model:</strong> Transaction-based (API requests). Pay for what you use, with separate costs for map tiles, routing, etc.</li>
-                    <li><strong>Free Tier:</strong> Substantial daily free tier of 50,000 tile requests and 2,500 non-tile requests.</li>
-                    <li><strong>Key Strength:</strong> Deep expertise in automotive and routing. Accurate, real-time traffic data sourced from a vast network.</li>
-                    <li><strong>Ideal Use Case:</strong> Applications where routing, logistics, and real-time traffic are critical. The free tier is excellent for development and early-stage apps.</li>
-                    <li><strong>Official Site:</strong> <a href="https://developer.tomtom.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">developer.tomtom.com</a></li>
-                </ul>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-[#60A5FA] mb-4">🌍 HERE Navigation SDK</h3>
-                <ul class="space-y-3 text-gray-700">
-                    <li><strong>Offline Method:</strong> The most direct successor. Download maps by continent, country, or state, with options for more granular areas.</li>
-                    <li><strong>Pricing Model:</strong> Enterprise-focused. Custom pricing available on request, tailored to specific business needs.</li>
-                    <li><strong>Free Tier:</strong> Freemium plan available, with specifics typically discussed during sales consultations.</li>
-                    <li><strong>Key Strength:</strong> A feature-rich, all-in-one navigation solution with powerful offline capabilities, including search and routing.</li>
-                    <li><strong>Ideal Use Case:</strong> Enterprise-level applications, fleet management, and projects that require a direct, feature-comparable replacement for the old HERE SDK.</li>
-                    <li><strong>Official Site:</strong> <a href="https://www.here.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">here.com</a></li>
-                </ul>
-            </div>
-        </main>
 
         <section class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-2xl font-bold text-[#003B73] mb-4 text-center">Offline Download Methods</h2>
-                <p class="text-gray-700 mb-6 text-center">Modern SDKs offer different approaches to offline map storage, moving from rigid hierarchies to on-demand flexibility.</p>
-                <div class="flex flex-col space-y-6">
+                <h3 class="text-2xl font-bold text-center text-[#1E3A8A] mb-4">Pricing Models Compared</h3>
+                <p class="text-center text-gray-600 mb-4">The SDKs offer diverse pricing strategies. Your choice will depend on whether you prefer predictable user-based costs, pay-as-you-go flexibility, custom enterprise plans, or a completely free solution.</p>
+                <div class="chart-container">
+                    <canvas id="pricingModelsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-center text-[#1E3A8A] mb-4">Feature Capability Radar</h3>
+                 <p class="text-center text-gray-600 mb-4">We rated each SDK on a scale of 1-5 across key decision factors. This reveals the unique strengths of each platform, helping you align a provider with your app's core requirements.</p>
+                <div class="chart-container">
+                    <canvas id="featureRadarChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16">
+            <h2 class="text-3xl font-bold text-center text-[#1E3A8A] mb-8">Decision Flowchart: Finding Your Path</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="flowchart-node">
+                    <h4 class="font-bold text-lg">What is your primary requirement?</h4>
+                </div>
+                <div class="flowchart-arrow">↓</div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                     <div>
-                        <h4 class="font-semibold text-lg text-[#0074B7]">Legacy & HERE SDK Approach</h4>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <div class="p-2 bg-blue-100 rounded-md text-blue-800">Continent</div>
-                            <div class="text-blue-500 font-bold">&rarr;</div>
-                            <div class="p-2 bg-blue-100 rounded-md text-blue-800">Country</div>
-                            <div class="text-blue-500 font-bold">&rarr;</div>
-                            <div class="p-2 bg-blue-100 rounded-md text-blue-800">State</div>
-                        </div>
-                        <p class="text-sm text-gray-600 mt-2">A structured, hierarchical download process. Simple for users, but less flexible.</p>
+                        <div class="flowchart-node"><span>🎨</span><br>Brand & Style</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="p-2 bg-green-100 text-green-800 rounded-md font-semibold">Mapbox</div>
+                    </div>
+                    <div>
+                        <div class="flowchart-node"><span>🚚</span><br>Routing & Logistics</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="p-2 bg-green-100 text-green-800 rounded-md font-semibold">TomTom / HERE</div>
+                    </div>
+                    <div>
+                        <div class="flowchart-node"><span>💰</span><br>Cost & Control</div>
+                        <div class="flowchart-arrow">↓</div>
+                         <div class="p-2 bg-green-100 text-green-800 rounded-md font-semibold">osmdroid</div>
+                    </div>
+                </div>
+                 <div class="flowchart-arrow">↓</div>
+                 <div class="flowchart-node">
+                    <h4 class="font-bold text-lg">Need deep GIS data or user familiarity?</h4>
+                </div>
+                <div class="flowchart-arrow">↓</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                     <div>
+                        <div class="flowchart-node"><span>📈</span><br>Professional GIS Data</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="p-2 bg-green-100 text-green-800 rounded-md font-semibold">ArcGIS</div>
                     </div>
                      <div>
-                        <h4 class="font-semibold text-lg text-[#0074B7]">Modern (Mapbox/TomTom) Approach</h4>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <div class="p-2 bg-green-100 rounded-md text-green-800">Select Area</div>
-                            <div class="text-green-500 font-bold">&rarr;</div>
-                            <div class="p-2 bg-green-100 rounded-md text-green-800">Define Bounds</div>
-                            <div class="text-green-500 font-bold">&rarr;</div>
-                            <div class="p-2 bg-green-100 rounded-md text-green-800">Download</div>
-                        </div>
-                         <p class="text-sm text-gray-600 mt-2">Users download exactly what they need, saving storage and data.</p>
+                        <div class="flowchart-node"><span>🧑‍🤝‍🧑</span><br>User Familiarity</div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="p-2 bg-green-100 text-green-800 rounded-md font-semibold">Google Maps</div>
                     </div>
                 </div>
             </div>
-             <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-2xl font-bold text-[#003B73] mb-4 text-center">Pricing Model Preference</h2>
-                <p class="text-gray-700 mb-6 text-center">Your app's scale and usage patterns will influence which pricing model is most cost-effective.</p>
-                <div class="chart-container h-[300px] md:h-[350px]">
-                    <canvas id="pricingModelChart"></canvas>
-                </div>
-            </div>
         </section>
 
-        <section class="mt-12 bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-bold text-center text-[#003B73] mb-4">Estimated Monthly Cost Comparison</h2>
-            <p class="text-gray-700 text-center mb-6">A hypothetical scenario for an app with 10,000 Monthly Active Users, each making an average of 100 map requests.</p>
-            <div class="chart-container">
-                <canvas id="costComparisonChart"></canvas>
-            </div>
-        </section>
-
-        <footer class="text-center mt-12">
-             <h2 class="text-2xl font-bold text-[#003B73] mb-4">Recommendation</h2>
-            <p class="text-gray-700 max-w-4xl mx-auto">
-                For a seamless transition with familiar offline capabilities and an enterprise focus, the <strong class="text-[#0074B7]">HERE Navigation SDK</strong> is your most direct upgrade. If your priority is unparalleled design flexibility and a predictable, user-based cost model, <strong class="text-[#0074B7]">Mapbox</strong> is the leading choice. For projects that are heavily reliant on routing and can benefit from a large free tier during development, <strong class="text-[#0074B7]">TomTom</strong> presents a very compelling option.
+        <section class="mt-16 text-center">
+            <h2 class="text-3xl font-bold text-[#1E3A8A] mb-4">Final Recommendation</h2>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                The "best" SDK is the one that aligns with your app's specific needs. If you're replacing the legacy HERE SDK directly, the new <strong>HERE Navigation SDK</strong> is the most straightforward path. For unparalleled design flexibility, choose <strong>Mapbox</strong>. For best-in-class routing and traffic, <strong>TomTom</strong> excels. If your app is built on complex geospatial data, <strong>ArcGIS</strong> is the professional's choice. For a familiar user experience and powerful search, consider <strong>Google Maps</strong>, but be mindful of its user-centric offline model. Finally, for full control and zero licensing cost, <strong>osmdroid</strong> is a powerful open-source contender.
             </p>
-        </footer>
+        </section>
 
     </div>
 
     <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
         const wrapLabel = (label) => {
             const maxLength = 16;
-            if (label.length <= maxLength) {
-                return label;
-            }
+            if (label.length <= maxLength) return label;
             const words = label.split(' ');
             const lines = [];
             let currentLine = '';
-            for (const word of words) {
+            words.forEach(word => {
                 if ((currentLine + ' ' + word).trim().length > maxLength) {
                     lines.push(currentLine.trim());
                     currentLine = word;
                 } else {
                     currentLine = (currentLine + ' ' + word).trim();
                 }
-            }
-            if (currentLine) {
-                lines.push(currentLine.trim());
-            }
+            });
+            if (currentLine) lines.push(currentLine.trim());
             return lines;
         };
 
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-              return label.join(' ');
-            } else {
-              return label;
-            }
-        };
+        const brilliantBluesPalette = ['#60A5FA', '#3B82F6', '#2563EB', '#1D4ED8', '#1E3A8A', '#1E40AF'];
 
-        const chartColors = {
-            blue1: '#003B73',
-            blue2: '#0074B7',
-            blue3: '#60A5FA',
-            gray: '#BFDBFE'
-        };
-
-        const costComparisonCtx = document.getElementById('costComparisonChart').getContext('2d');
-        new Chart(costComparisonCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Mapbox (MAU-based)', 'TomTom (Request-based)', 'HERE SDK'],
-                datasets: [{
-                    label: 'Estimated Monthly Cost ($)',
-                    data: [2970, 80, 0],
-                    backgroundColor: [chartColors.blue3, chartColors.blue2, chartColors.blue1],
-                    borderColor: [chartColors.blue3, chartColors.blue2, chartColors.blue1],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                           title: tooltipTitleCallback,
-                           label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
-                                }
-                                if (context.parsed.y !== null) {
-                                   if(context.label === 'HERE SDK') {
-                                       label = 'Custom Enterprise Pricing';
-                                   } else {
-                                       label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
-                                   }
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) {
-                                return '$' + value;
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        const pricingModelCtx = document.getElementById('pricingModelChart').getContext('2d');
-        new Chart(pricingModelCtx, {
+        new Chart(document.getElementById('pricingModelsChart'), {
             type: 'doughnut',
             data: {
-                labels: ['MAU-based (Startups & Scale-ups)', 'Request-based (Usage-heavy Apps)', 'Enterprise (Large Corp)'].map(wrapLabel),
+                labels: ['MAU-based', 'Transaction-based', 'Enterprise/Custom', 'Free & Open Source'],
                 datasets: [{
-                    label: 'Model Preference',
-                    data: [45, 35, 20],
-                    backgroundColor: [chartColors.blue3, chartColors.blue2, chartColors.blue1],
-                    hoverOffset: 4
+                    label: 'Pricing Model Distribution',
+                    data: [1, 2, 2, 1],
+                    backgroundColor: brilliantBluesPalette,
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2,
                 }]
             },
             options: {
@@ -253,11 +243,104 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
+                        labels: {
+                             font: {
+                                size: 14,
+                                family: "'Nunito Sans', sans-serif"
+                            }
+                        }
                     },
                     tooltip: {
-                         callbacks: {
-                            title: tooltipTitleCallback
+                        callbacks: { title: tooltipTitleCallback }
+                    }
+                }
+            }
+        });
+
+        const radarChartLabels = ['Offline Flexibility', 'Map Customization', 'Routing Engine', 'Free Tier Value', 'Enterprise Support'];
+
+        new Chart(document.getElementById('featureRadarChart'), {
+            type: 'radar',
+            data: {
+                labels: radarChartLabels.map(wrapLabel),
+                datasets: [
+                    {
+                        label: 'Mapbox',
+                        data: [5, 5, 4, 4, 4],
+                        borderColor: brilliantBluesPalette[0],
+                        backgroundColor: 'rgba(96, 165, 250, 0.2)',
+                        pointBackgroundColor: brilliantBluesPalette[0],
+                    },
+                    {
+                        label: 'TomTom',
+                        data: [4, 3, 5, 5, 4],
+                        borderColor: brilliantBluesPalette[1],
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                         pointBackgroundColor: brilliantBluesPalette[1],
+                    },
+                    {
+                        label: 'HERE',
+                        data: [4, 3, 5, 3, 5],
+                        borderColor: brilliantBluesPalette[2],
+                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                        pointBackgroundColor: brilliantBluesPalette[2],
+                    },
+                    {
+                        label: 'Google Maps',
+                        data: [2, 4, 5, 4, 5],
+                        borderColor: brilliantBluesPalette[3],
+                        backgroundColor: 'rgba(29, 78, 216, 0.2)',
+                        pointBackgroundColor: brilliantBluesPalette[3],
+                    },
+                     {
+                        label: 'ArcGIS',
+                        data: [5, 4, 4, 2, 5],
+                        borderColor: brilliantBluesPalette[4],
+                        backgroundColor: 'rgba(30, 58, 138, 0.2)',
+                        pointBackgroundColor: brilliantBluesPalette[4],
+                    },
+                    {
+                        label: 'osmdroid',
+                        data: [5, 3, 3, 5, 2],
+                        borderColor: brilliantBluesPalette[5],
+                        backgroundColor: 'rgba(30, 64, 175, 0.2)',
+                        pointBackgroundColor: brilliantBluesPalette[5],
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#D1D5DB' },
+                        grid: { color: '#E5E7EB' },
+                        pointLabels: {
+                            font: {
+                                size: 12,
+                                family: "'Nunito Sans', sans-serif"
+                             }
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            stepSize: 1
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 5
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                         labels: {
+                             font: {
+                                size: 14,
+                                family: "'Nunito Sans', sans-serif"
+                            }
                         }
+                    },
+                     tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
                     }
                 }
             }
@@ -265,5 +348,4 @@
     </script>
 </body>
 </html>
-
 
