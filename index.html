@@ -58,6 +58,7 @@
                     <li><strong>Free Tier:</strong> Generous free tier for up to 100 MAUs for the Navigation SDK.</li>
                     <li><strong>Key Strength:</strong> Unmatched map customization and styling with Mapbox Studio. Strong developer community and documentation.</li>
                     <li><strong>Ideal Use Case:</strong> Apps requiring a unique brand identity, highly custom map styles, and a predictable, user-based pricing model.</li>
+                    <li><strong>Official Site:</strong> <a href="https://www.mapbox.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">mapbox.com</a></li>
                 </ul>
             </div>
 
@@ -69,6 +70,7 @@
                     <li><strong>Free Tier:</strong> Substantial daily free tier of 50,000 tile requests and 2,500 non-tile requests.</li>
                     <li><strong>Key Strength:</strong> Deep expertise in automotive and routing. Accurate, real-time traffic data sourced from a vast network.</li>
                     <li><strong>Ideal Use Case:</strong> Applications where routing, logistics, and real-time traffic are critical. The free tier is excellent for development and early-stage apps.</li>
+                    <li><strong>Official Site:</strong> <a href="https://developer.tomtom.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">developer.tomtom.com</a></li>
                 </ul>
             </div>
 
@@ -80,6 +82,7 @@
                     <li><strong>Free Tier:</strong> Freemium plan available, with specifics typically discussed during sales consultations.</li>
                     <li><strong>Key Strength:</strong> A feature-rich, all-in-one navigation solution with powerful offline capabilities, including search and routing.</li>
                     <li><strong>Ideal Use Case:</strong> Enterprise-level applications, fleet management, and projects that require a direct, feature-comparable replacement for the old HERE SDK.</li>
+                    <li><strong>Official Site:</strong> <a href="https://www.here.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-semibold">here.com</a></li>
                 </ul>
             </div>
         </main>
@@ -161,7 +164,7 @@
             }
             return lines;
         };
-        
+
         const tooltipTitleCallback = (tooltipItems) => {
             const item = tooltipItems[0];
             let label = item.chart.data.labels[item.dataIndex];
@@ -186,7 +189,7 @@
                 labels: ['Mapbox (MAU-based)', 'TomTom (Request-based)', 'HERE SDK'],
                 datasets: [{
                     label: 'Estimated Monthly Cost ($)',
-                    data: [2970, 80, 0], 
+                    data: [2970, 80, 0],
                     backgroundColor: [chartColors.blue3, chartColors.blue2, chartColors.blue1],
                     borderColor: [chartColors.blue3, chartColors.blue2, chartColors.blue1],
                     borderWidth: 1
@@ -262,4 +265,5 @@
     </script>
 </body>
 </html>
+
 
